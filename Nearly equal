@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int hamming(string& a, string& b) {
+    int count = 0;
+    for (int i = 0; i < b.size(); i++) {
+        if (a[i] != b[i]) count++;
+    }
+    return count;
+}
+
+int main() {
+    int t;
+    cin >> t; 
+    while (t--) {
+        int n, m;
+        cin >> n >> m; 
+        string a, b;
+        cin >> a >> b;
+
+        vector<string> v; 
+
+        for (int i = 0; i <= a.length() - m; i++) {
+            string sub = a.substr(i, m); 
+            v.push_back(sub); 
+        }
+
+        int md = INT_MAX; 
+
+       
+        for (int i = 0; i < v.size(); i++) {
+            int d = hamming(v[i], b); 
+            md = min(md, d); 
+        }
+
+        cout << md << endl; 
+    }
+    return 0;
+}
