@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, x, k;
+        cin >> n >> x >> k;
+
+        int boys = x;
+        int girls = n - x;
+
+        // Form trekking groups (using modulo instead of while loops)
+        boys = boys % k;
+        girls = girls % k;
+
+        // Pairing for bonfire
+        int pair = min(boys,girls);
+        int res = boys+girls-(2*pair);
+
+        // Output the number of students left for reading
+        cout << res << endl;
+    }
+}
