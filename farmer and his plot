@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+int gcd(int l, int b){
+    if(l==0) return b;
+    if(b==0) return l;
+    if(l==b) return l;
+    if(l>b) return gcd(l-b,b);
+    else return gcd(l,b-l);
+}
+int main() {
+	// your code goes here
+    int t;
+    cin>>t;
+    while(t--){
+        int n, m;
+        cin>>n>>m;
+        int area = n * m;
+        int x = gcd(n,m)*gcd(n,m);
+        int no_of_sqaure = area/x ;
+        cout<<no_of_sqaure<<endl;
+    }
+}
