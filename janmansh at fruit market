@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int t;
+    cin>>t;
+    while(t--){
+        int x , a , b , c;
+        cin>>x>>a>>b>>c;
+        vector<int>arr={a,b,c};
+        sort(arr.begin(),arr.end());
+        int p1 = arr[0];
+        int p2 = arr[1];
+        int min_price = p2 + (x-1)*p1;
+        cout<<min_price<<endl;
+    }
+}
