@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int t;
+    cin>>t;
+    while(t--){
+        int n , x;
+        cin>>n>>x;
+        int coins = 0;
+        while(x){   // total wins
+            coins+=pow(2,n);
+            x--;
+            n--;
+        }
+        while(n){   // total losses
+            coins-=pow(2,n);
+            n--;
+        }
+        cout<<coins<<endl;
+    }
+}
