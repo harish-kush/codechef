@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+void helper(){
+    int arr[3];
+    for(int i=0;i<3;i++) cin>>arr[i];
+    
+    int d = *min_element(arr,arr+3);  // used to find min element from the array
+    if(count(arr,arr+3,d)>=2){  // this line means that bw [arr,arr+3) count the number of elements having value d and greater than 2
+        cout<<"yes"<<endl;
+    }
+    else cout<<"no"<<endl;
+    
+   
+    
+}
+int main() {
+	// your code goes here
+    int t;
+    cin>>t;
+    while(t--) helper();
+}
